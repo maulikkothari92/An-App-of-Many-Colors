@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Create HTML5 Canvas JavaScript Drawing App Example </title>
+    <script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/draw.js">   </script>
+
+<script>
+
+var io = io.connect('/');
+// (1): Send a ping event with 
+// some data to the server
+console.log( "socket: browser says ping (1)" )
+io.emit('ping', { some: 'data' } );
+
+// (4): When the browser receives a pong event
+// console log a message and the events data
+io.on('pong', function (data) {
+    console.log( 'socket: browser receives pong (4)', data );
+});
+
+io.on('heartbeat', function (data) {
+    console.log(data);
+});
+
+io.on( 'addClick', function( data ) {
+
+  console.log( 'addClick event recieved:', data );
+
+  // Draw the circle using the data sent
+  // from another user
+  addClick( data.x, data.y, data.dragging, data.curColor, data.curTool, data.curSize );
+  //redraw();
+  
+});
+</script>
+</head>
+<body>
+    <div id="canvasDiv"></div>
+    <script type="text/javascript"> $(document).ready(function() {
+         prepareCanvas();
+});</script>
+  </body>
+</html>
