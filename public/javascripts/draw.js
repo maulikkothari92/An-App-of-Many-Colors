@@ -38,7 +38,7 @@ var clickTool = new Array();
 var clickSize = new Array();
 var clickDrag = new Array();
 var paint = false;
-var curColor = colorPurple;
+var curColor = '#'+Math.random().toString(16).substr(-6);
 var curTool = "crayon";
 var curSize = "normal";
 var mediumStartX = 18;
@@ -94,7 +94,7 @@ function prepareCanvas()
     crayonImage.onload = function() { resourceLoaded(); 
     };
     crayonImage.src = "images/crayon-outline.png";
-    //context.drawImage(crayonImage, 0, 0, 100, 100);
+    context.drawImage(crayonImage, 0, 0, 100, 100);
     
     markerImage.onload = function() { resourceLoaded(); 
     };
@@ -104,9 +104,9 @@ function prepareCanvas()
     };
     eraserImage.src = "images/eraser-outline.png";  
     
-    crayonBackgroundImage.onload = function() { resourceLoaded(); 
-    };
-    crayonBackgroundImage.src = "images/crayon-background.png";
+   crayonBackgroundImage.onload = function() { resourceLoaded(); 
+   };
+   crayonBackgroundImage.src = "images/crayon-background.png";
     
     markerBackgroundImage.onload = function() { resourceLoaded(); 
     };
@@ -132,7 +132,7 @@ function prepareCanvas()
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
         
-        if(mouseX < drawingAreaX) // Left of the drawing area
+        /*if(mouseX < drawingAreaX) // Left of the drawing area
         {
             if(mouseX > mediumStartX)
             {
@@ -147,7 +147,8 @@ function prepareCanvas()
                 }
             }
         }
-        else if(mouseX > drawingAreaX + drawingAreaWidth) // Right of the drawing area
+        else */
+        if(mouseX > drawingAreaX + drawingAreaWidth) // Right of the drawing area
         {
             if(mouseY > toolHotspotStartY)
             {

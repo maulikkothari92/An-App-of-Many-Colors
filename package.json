@@ -9,5 +9,17 @@
     "express": "3.4.8",
     "jade": "*",
     "socket.io": "*"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maulikkothari92/An-App-of-Many-Colors.git"
+  },
+  "author": "Maulik Asit Kothari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maulikkothari92/An-App-of-Many-Colors/issues"
+  },
+  "homepage": "https://github.com/maulikkothari92/An-App-of-Many-Colors"
 }
