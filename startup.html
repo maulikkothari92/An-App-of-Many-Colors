@@ -7,7 +7,7 @@
 <script type="text/javascript" src="/javascripts/draw.js">   </script>
 
 <script>
-
+//Setup a connection
 var io = io.connect('/');
 // (1): Send a ping event with 
 // some data to the server
@@ -28,7 +28,7 @@ io.on( 'addClick', function( data ) {
 
   console.log( 'addClick event recieved:', data );
 
-  // Draw the circle using the data sent
+  // Draw using the data sent
   // from another user
   addClick( data.x, data.y, data.dragging, data.curColor, data.curTool, data.curSize );
   //redraw();

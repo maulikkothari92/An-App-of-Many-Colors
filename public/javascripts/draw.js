@@ -231,7 +231,7 @@ function emitClick(x, y, dragging, curColor, curTool, curSize)
     // Each Socket.IO connection has a unique session id
       var sessionId = io.socket.sessionid;
   
-      // An object to describe the circle's draw data
+      // An object to describe the draw data
       var data = {
         x: x,
         y: y,
@@ -250,13 +250,13 @@ function emitClick(x, y, dragging, curColor, curTool, curSize)
       console.log( data )
     
 }
-// Listen for 'drawCircle' events
+// Listen for 'addClick' events
 // created by other users
 io.on( 'addClick', function( data ) {
 
   console.log( 'addClick event recieved:', data );
 
-  // Draw the circle using the data sent
+  // Draw using the data sent
   // from another user
   addClick( data.x, data.y, data.dragging, data.curColor, data.curTool, data.curSize );
   //redraw();
