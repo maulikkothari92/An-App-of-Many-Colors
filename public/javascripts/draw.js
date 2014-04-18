@@ -38,7 +38,8 @@ var clickTool = new Array();
 var clickSize = new Array();
 var clickDrag = new Array();
 var paint = false;
-var curColor = '#'+Math.random().toString(16).substr(-6);
+var curColor = colorPurple;
+'#'+Math.random().toString(16).substr(-6);
 var curTool = "crayon";
 var curSize = "normal";
 var mediumStartX = 18;
@@ -132,7 +133,7 @@ function prepareCanvas()
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
         
-        /*if(mouseX < drawingAreaX) // Left of the drawing area
+        if(mouseX < drawingAreaX) // Left of the drawing area
         {
             if(mouseX > mediumStartX)
             {
@@ -147,7 +148,7 @@ function prepareCanvas()
                 }
             }
         }
-        else */
+        else 
         if(mouseX > drawingAreaX + drawingAreaWidth) // Right of the drawing area
         {
             if(mouseY > toolHotspotStartY)
