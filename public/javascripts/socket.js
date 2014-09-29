@@ -1,5 +1,4 @@
-//var base = 'http://clicktime.herokuapp.com:80/rooms/';
-//var roomName = 'my-awesome-room';    // Replace this with your own room name
+
 
 var io = io.connect('/');
 // (1): Send a ping event with 
